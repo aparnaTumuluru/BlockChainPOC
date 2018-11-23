@@ -1,0 +1,535 @@
+{
+  "Contracts": {
+    "TitleLicenceAgreementv12": {
+      "InitiatingRoles": [
+        "Admin",
+        "User"
+      ],
+      "Personas": {
+        "Admin": {
+          "Role": "Initiator",
+          "IsInitiator": true,
+          "PropertyMapping": "Admin"
+        },
+        "Developer": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Developer"
+        },
+        "Designer": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Designer"
+        },
+        "Reviewer": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Reviewer"
+        },
+        "Manager": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Manager"
+        },
+        "User1": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "User1"
+        },
+        "User2": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "User2"
+        }
+      },
+      "StateProperty": "State",
+      "StateMapping": {
+        "Created": 0,
+        "RoyaltyConfigured": 1,
+        "Terminated": 2,
+        "RoyaltyModified": 3,
+        "UsageRecorded": 4,
+        "OwnerShipTransferred": 5,
+        "GameDetailsModified": 6
+      },
+      "States": {
+        "Created": {
+          "PercentComplete": 30.0,
+          "IsInitiatingState": true,
+          "IsDefaultState": true,
+          "Style": "Success",
+          "Actions": {
+            "Admin": {
+              "SetRoyalty": {
+                "DisplayName": "Set Royalty"
+              },
+              "Terminate": {
+                "DisplayName": "Terminate"
+              }
+            }
+          }
+        },
+        "RoyaltyConfigured": {
+          "PercentComplete": 50.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+              "Admin":{
+                "ModifyRoyalty": {
+                  "DisplayName": "Modify Royalty(%)"
+                },
+                "Terminate": {
+                  "DisplayName": "Terminate"
+                }
+              },
+              "Developer": {
+                "Modify": {
+                  "DisplayName": "Modify Details "
+                },
+                "Transfer": {
+                  "DisplayName": "Transfer"
+                }
+              },
+              "Developer2": {
+                "Modify": {
+                  "DisplayName": "Modify Details "
+                },
+                "Transfer": {
+                  "DisplayName": "Transfer"
+                }
+              },
+              "User1": {
+                "RecordUsage": {
+                  "DisplayName": "RecordUsage"
+                }
+              },
+              "User2": {
+                "RecordUsage": {
+                  "DisplayName": "RecordUsage"
+                }
+              }
+          }
+        },
+      
+        "Terminated": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Failure",
+          "Actions": {}
+        },
+        "RoyaltyModified": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Admin":{
+             
+              "ModifyRoyalty": {
+                "DisplayName": "Modify Royalty(%)"
+              },
+              "Terminate": {
+                "DisplayName": "Terminate"
+              }
+            },
+            "Developer": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "Developer2": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "User1": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            },
+            "User2": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            }
+          }
+        },
+        "UsageRecorded": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Admin":{
+             
+              "ModifyRoyalty": {
+                "DisplayName": "Modify Royalty(%)"
+              },
+              "Terminate": {
+                "DisplayName": "Terminate"
+              }
+            },
+            "Developer1": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "Designer": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "User1": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            },
+            "User2": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            },
+            "Reviewer": {
+              "UpdateBalance": {
+                "DisplayName": "Update Balance"
+              }
+            },
+            "Manager": {
+              "UpdateBalance": {
+                "DisplayName": "Update Balance"
+              }
+            }
+          }
+        },
+        "OwnerShipTransferred": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Admin":{
+             
+              "ModifyRoyalty": {
+                "DisplayName": "Modify Royalty(%)"
+              },
+              "Terminate": {
+                "DisplayName": "Terminate"
+              }
+            },
+            "Developer": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "Designer": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "User1": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            },
+            "User2": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            }
+          }
+        },
+        "GameDetailsModified": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Admin":{
+             
+              "ModifyRoyalty": {
+                "DisplayName": "Modify Royalty(%)"
+              },
+              "Terminate": {
+                "DisplayName": "Terminate"
+              }
+            },
+            "Developer": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "Designer": {
+              "Modify": {
+                "DisplayName": "Modify Details "
+              },
+              "Transfer": {
+                "DisplayName": "Transfer"
+              }
+            },
+            "User1": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            },
+            "User2": {
+              "RecordUsage": {
+                "DisplayName": "RecordUsage"
+              }
+            }
+          }
+        }
+      },
+      "Properties": {
+        "Developer": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "Designer": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "Admin": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "Reviewer": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "Manager": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "User1": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "User2": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "DeveloperBalance": {
+          "DisplayName": "Developer Balance",
+          "Description": ""
+        },
+        "DesignerBalance": {
+          "DisplayName": "Designer Balance",
+          "Description": ""
+        }
+      },
+      "Constructor": {
+        "DisplayName": "TitleLicenceAgreementv12 capture",
+        "Description": "TitleLicenceAgreementv12 creation"
+      },
+      "Actions": {
+        "ModifyRoyalty": {
+          "DisplayName": "Modify Royalty(%)"
+        },
+        "Terminate": {
+          "DisplayName": "Terminate"
+        },
+        "Modify": {
+          "DisplayName": "Modify Details "
+        },
+        "Transfer": {
+          "DisplayName": "Transfer"
+        },
+        "RecordUsage": {
+          "DisplayName": "Record Usage"
+        },
+        "SetRoyalty": {
+          "DisplayName": "Set Royalty"
+        },
+        "UpdateBalance": {
+          "DisplayName": "Update Balance"
+        }
+      }
+    },
+    "UsageContractv12": {
+      "InitiatingRoles": [
+        "Admin",
+        "User"
+      ],
+      "Personas": {
+        "Reviewer": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Reviewer"
+        },
+        "Manager": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Manager"
+        },
+        "User": {
+          "Role": "Initiator",
+          "IsInitiator": true,
+          "PropertyMapping": "User"
+        }
+      },
+      "StateProperty": "State",
+      "StateMapping": {
+        "PendingReview": 0,
+        "Reviewed": 1,
+        "PendingManagerApproval": 2,
+        "ReviewerApproved": 3,
+        "ReviewerRejected": 4,
+        "ManagerApproved": 5,
+        "ManagerRejected": 6,
+        "PaidRoyalty": 7
+      },
+      "States": {
+        "PendingReview": {
+          "PercentComplete": 20.0,
+          "IsInitiatingState": true,
+          "IsDefaultState": true,
+          "Style": "Success",
+          "Actions": {
+            "Reviewer": {
+              "Inspect": {
+                "DisplayName": "Review"
+              }
+            }
+          }
+        },
+        "Reviewed": {
+          "PercentComplete": 50.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Reviewer": {
+              "Approve": {
+                "DisplayName": "Approve"
+              },
+              "Reject": {
+                "DisplayName": "Reject"
+              }
+            }
+          }
+        },
+        "PendingManagerApproval": {
+          "PercentComplete": 60.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Manager": {
+              "ManagerApprove": {
+                "DisplayName": "ManagerApprove"
+              },
+              "Reject": {
+                "DisplayName": "Reject"
+              }
+            }
+          }
+        },
+        "ReviewerApproved": {
+          "PercentComplete": 80.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Reviewer": {
+              "Pay": {
+                "DisplayName": "Pay"
+              }
+            }
+          }
+        },
+        "ReviewerRejected": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Failure",
+          "Actions": {}
+        },
+        "ManagerApproved": {
+          "PercentComplete": 80.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "",
+          "Actions": {
+            "Manager": {
+              "Pay": {
+                "DisplayName": "Pay"
+              }
+            }
+          }
+        },
+        "ManagerRejected": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "",
+          "Actions": {}
+        },
+        "PaidRoyalty": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "",
+          "Actions": {}
+        }
+      },
+      "Properties": {
+        "Reviewer": {
+          "DisplayName": "Reviewer",
+          "Description": ""
+        },
+        "Manager": {
+          "DisplayName": "Manager",
+          "Description": ""
+        },
+        "User": {
+          "DisplayName": "User",
+          "Description": ""
+        }
+      },
+      "Constructor": {
+        "DisplayName": "UsageContractv12 capture",
+        "Description": "UsageContractv12 creation"
+      },
+      "Actions": {
+        "Inspect": {
+          "DisplayName": "Review"
+        },
+        "Approve": {
+          "DisplayName": "Approve"
+        },
+        "ManagerApprove": {
+          "DisplayName": "ManagerApprove"
+        },
+        "Reject": {
+          "DisplayName": "Reject"
+        },
+        "Pay": {
+          "DisplayName": "PayRoyalty"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "TitleLicenceAgreementv12": {
+    "Properties": {
+      "GameTitle": {
+        "Type": "string"
+      },
+      "GameDescription": {
+        "Type": "string"
+      },
+      "TotalPrice": {
+        "Type": "money"
+      },
+      "Developer": {
+        "Type": "user"
+      },
+      "Designer": {
+        "Type": "user"
+      },
+      "DeveloperRoyalty": {
+        "Type": "uint"
+      },
+      "DesignerRoyalty": {
+        "Type": "uint"
+      },
+      "Admin": {
+        "Type": "user"
+      },
+      "Reviewer": {
+        "Type": "user"
+      },
+      "Manager": {
+        "Type": "user"
+      },
+      "User1": {
+        "Type": "user"
+      },
+      "User2": {
+        "Type": "user"
+      },
+      "State": {
+        "Type": "state"
+      },
+      "DeveloperBalance": {
+        "Type": "money"
+      },
+      "DesignerBalance": {
+        "Type": "money"
+      }
+    },
+    "Constructor": {
+      "Game_Title": {
+        "Type": "string"
+      },
+      "Game_Description": {
+        "Type": "string"
+      },
+      "Total_Price": {
+        "Type": "money"
+      },
+      "Level1_Approver": {
+        "Type": "user"
+      },
+      "Level2_Approver": {
+        "Type": "user"
+      },
+      "User_1": {
+        "Type": "user"
+      },
+      "User_2": {
+        "Type": "user"
+      }
+    },
+    "Actions": {
+      "ModifyRoyalty": {
+        "Parameters": {
+          "Developer_Royalty": {
+            "Type": "uint"
+          },
+          "Designer_Royalty": {
+            "Type": "uint"
+          }
+        }
+      },
+      "Terminate": {
+        "Parameters": {}
+      },
+      "Modify": {
+        "Parameters": {
+          "Game_Title": {
+            "Type": "string"
+          },
+          "Game_Description": {
+            "Type": "string"
+          },
+          "Price": {
+            "Type": "money"
+          }
+        }
+      },
+      "Transfer": {
+        "Parameters": {
+          "TransferTo": {
+            "Type": "user"
+          }
+        }
+      },
+      "RecordUsage": {
+        "Parameters": {
+          "NumberOfDownloads": {
+            "Type": "uint"
+          }
+        }
+      },
+      "SetRoyalty": {
+        "Parameters": {
+          "Developer_Id": {
+            "Type": "user"
+          },
+          "Developer_Royalty": {
+            "Type": "uint"
+          },
+          "Designer_Id": {
+            "Type": "user"
+          },
+          "Designer_Royalty": {
+            "Type": "uint"
+          }
+        }
+      },
+      "UpdateBalance": {
+        "Parameters": {
+          "DevRoyalty": {
+            "Type": "money"
+          },
+          "DesRoyalty": {
+            "Type": "money"
+          }
+        }
+      }
+    },
+    "Chains": {
+      "Ethereum": {
+        "Type": "Ethereum",
+        "Version": "1.0",
+        "Location": "TitleLicenceAgreementv12.sol",
+        "TypeName": "TitleLicenceAgreementv12",
+        "ActionOverrides": {},
+        "PropertyOverrides": {}
+      }
+    }
+  },
+  "UsageContractv12": {
+    "Properties": {
+      "DeveloperRoyaltyPercent": {
+        "Type": "uint"
+      },
+      "DesignerRoyaltyPercent": {
+        "Type": "uint"
+      },
+      "Reviewer": {
+        "Type": "user"
+      },
+      "Manager": {
+        "Type": "user"
+      },
+      "User": {
+        "Type": "user"
+      },
+      "State": {
+        "Type": "state"
+      },
+      "TotalRoyaltyPayout": {
+        "Type": "money"
+      },
+      "DeveloperPayout": {
+        "Type": "money"
+      },
+      "DesignerPayout": {
+        "Type": "money"
+      },
+      "Price": {
+        "Type": "money"
+      },
+      "NumberOfDownloads": {
+        "Type": "uint"
+      }
+    },
+    "Constructor": {
+      "developerRoyaltyPercent": {
+        "Type": "uint"
+      },
+      "designerRoyaltyPercent": {
+        "Type": "uint"
+      },
+      "Level1_Approver": {
+        "Type": "user"
+      },
+      "Level2_Approver": {
+        "Type": "user"
+      },
+      "user": {
+        "Type": "user"
+      },
+      "price": {
+        "Type": "uint"
+      },
+      "numberOfViews": {
+        "Type": "uint"
+      },
+      "TLAContract":{
+        "Type": "address"
+      }
+    },
+    "Actions": {
+      "Inspect": {
+        "Parameters": {}
+      },
+      "Approve": {
+        "Parameters": {}
+      },
+      "ManagerApprove": {
+        "Parameters": {}
+      },
+      "Reject": {
+        "Parameters": {}
+      },
+      "Pay": {
+        "Parameters": {}
+      }
+    },
+    "Chains": {
+      "Ethereum": {
+        "Type": "Ethereum",
+        "Version": "1.0",
+        "Location": "UsageContractv12.sol",
+        "TypeName": "UsageContractv12",
+        "ActionOverrides": {},
+        "PropertyOverrides": {}
+      }
+    }
+  }
+}
