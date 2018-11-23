@@ -1,0 +1,99 @@
+{
+  "AssetContract": {
+    "Properties": {
+      "State": {
+        "Type": "state"
+      },
+      "Owner": {
+        "Type": "user"
+      },
+      "AssetDescription": {
+        "Type": "string"
+      },
+      "Reviewer": {
+        "Type": "user"
+      },
+      "AssetPrice": {
+        "Type": "money"
+      },
+      "Admin": {
+        "Type": "user"
+      },
+      "AssetName": {
+        "Type": "string"
+      },
+      "AssetType": {
+        "Type": "string"
+      }
+    },
+    "Constructor": {
+      "Description": {
+        "Type": "string"
+      },
+      "Reviewer": {
+        "Type": "user"
+      },
+      "Price": {
+        "Type": "money"
+      },
+      "Owner": {
+        "Type": "user"
+      },
+      "Name": {
+        "Type": "string"
+      },
+      "TypeOfAsset": {
+        "Type": "string"
+      }
+    },
+    "Actions": {
+      "UpdateAsset": {
+        "Parameters": {
+          "Description": {
+            "Type": "string"
+          },
+          "Price": {
+            "Type": "money"
+          },
+          "Name": {
+            "Type": "string"
+          },
+          "TypeOfAsset": {
+            "Type": "string"
+          }
+        }
+      },
+      "Transfer":{
+        "Parameters":{
+          "TransferTo": {
+            "Type": "user"
+          }
+        }
+      },
+      "Terminate":{
+        "Parameters":{}
+      },
+      "UseAsset":{
+        "Parameters":{
+          "duration": {
+            "Type": "uint"
+          }
+        }
+      }
+    },
+    "Chains": {
+      "Ethereum": {
+        "Type": "Ethereum",
+        "Version": "1.0",
+        "Location": "AssetContract.sol",
+        "TypeName": "AssetContract",
+        "ActionOverrides": {
+          
+        },
+        "PropertyOverrides": {
+          
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "Contracts": {
+    "AssetContract": {
+      "InitiatingRoles": [
+        "Admin",
+        "User"
+      ],
+      "Personas": {
+        "Admin": {
+          "Role": "Initiator",
+          "IsInitiator": true,
+          "PropertyMapping": "Admin"
+        },
+        "Owner": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Owner"
+        },
+        "Reviewer": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "Reviewer"
+        },
+        "AssetUser": {
+          "Role": "Participant",
+          "IsInitiator": false,
+          "PropertyMapping": "AssetUser"
+        }
+      },
+      "StateProperty": "State",
+      "StateMapping": {
+        "Created": 0,
+        "Active": 1,
+        "Updated": 2,
+        "Transferred": 3,
+        "Deleted": 4
+      
+      },
+      "States": {
+        "Created": {
+          "PercentComplete": 20.0,
+          "IsInitiatingState": true,
+          "IsDefaultState": true,
+          "Style": "Success",
+          "Actions": {
+           
+          }
+        },
+        "Active": {
+          "PercentComplete": 40.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Owner": {
+              "UpdateAsset": {
+                "DisplayName": "Update Asset"
+              },
+              "Transfer":{
+                "DisplayName": "Transfer"
+              },
+              "Terminate":{
+                "DisplayName": "Terminate"
+              }
+                         
+            },
+            "AssetUser":{
+              "UseAsset":{
+                "DisplayName": "UseAsset"
+              }  
+            }
+          }
+        },
+        "Updated": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            "Owner": {
+              "UpdateAsset": {
+                "DisplayName": "Update Asset"
+              },
+              "Transfer":{
+                "DisplayName": "Transfer"
+              },
+              "Terminate":{
+                "DisplayName": "Terminate"
+              }                     
+            },
+            "AssetUser":{
+              "UseAsset":{
+                "DisplayName": "UseAsset"
+              }  
+            }
+          }
+        },
+        "Transferred": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            
+            "Owner": {
+              "UpdateAsset": {
+                "DisplayName": "Update Asset"
+              },
+              "Transfer":{
+                "DisplayName": "Transfer"
+              },
+              "Terminate":{
+                "DisplayName": "Terminate"
+              }                     
+            },
+            "AssetUser":{
+              "UseAsset":{
+                "DisplayName": "UseAsset"
+              }  
+            }
+          }
+        },
+        "Deleted": {
+          "PercentComplete": 100.0,
+          "IsInitiatingState": false,
+          "IsDefaultState": false,
+          "Style": "Success",
+          "Actions": {
+            
+          }
+        }
+    
+      },
+      "Properties": {
+         
+        "Admin": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "Owner": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "Reviewer": {
+          "DisplayName": "",
+          "Description": ""
+        },
+        "AssetUser": {
+          "DisplayName": "",
+          "Description": ""
+        }        
+      },
+      "Constructor": {
+        "DisplayName": "AssetContract capture",
+        "AssetDescription": "AssetContract creation"
+      },
+      "Actions": {
+        "UpdateAsset": {
+          "DisplayName": "Modify"
+        },
+        "Transfer": {
+          "DisplayName": "Transfer"
+        },
+        "Terminate":{
+          "DisplayName": "Terminate"
+        },
+        "UseAsset":{
+          "DisplayName": "UseAsset"
+        }
+      }
+    }
+  }
+}
